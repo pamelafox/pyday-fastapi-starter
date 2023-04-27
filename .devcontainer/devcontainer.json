@@ -1,0 +1,40 @@
+{
+    "name": "Azure Developer CLI",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "VARIANT": "3.10-bullseye"
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-from-docker:1": {
+            "version": "20.10"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "16",
+            "nodeGypDependencies": false
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-azuretools.azure-dev",
+                "ms-azuretools.vscode-bicep",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.vscode-node-azure-pack",
+                "ms-python.python",
+                "ms-azuretools.vscode-azurefunctions"
+            ]
+        }
+    },
+    "forwardPorts": [
+        8000,
+        7071
+    ],
+    "postCreateCommand": "pip3 install --user -r requirements.txt",
+
+    "remoteUser": "vscode",
+    "hostRequirements": {
+        "memory": "8gb"
+    }
+}
