@@ -6,6 +6,11 @@
             "VARIANT": "3.11-bullseye"
         }
     },
+    "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {
+            "version": "latest"
+        }
+    },
     "customizations": {
         "vscode": {
             "extensions": [
@@ -35,7 +40,8 @@
                     "**/*.coverage": true,
                     ".ruff_cache": true,
                     ".pytest_cache": true
-                }
+                },
+                "appService.deploySubpath": "api"
             }
         }
     },
