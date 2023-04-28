@@ -10,12 +10,16 @@
         "vscode": {
             "extensions": [
                 "ms-azuretools.vscode-bicep",
-                "ms-python.python"
+                "ms-python.python",
+                "ryanluker.vscode-coverage-gutters"
             ],
             "python.defaultInterpreterPath": "/usr/local/bin/python",
             "python.linting.enabled": true,
-            "python.testing.pytestEnabled": true,
             "python.testing.unittestEnabled": false,
+            "python.testing.pytestEnabled": true,
+            "python.testing.pytestArgs": [
+                "tests"
+            ],
             "[python]": {
                 "editor.formatOnSave": true,
                 "editor.codeActionsOnSave": {
@@ -35,6 +39,6 @@
         8000,
         7071
     ],
-    "postCreateCommand": "pip3 install --user -r requirements.txt",
+    "postCreateCommand": "pip3 install --user -r requirements-dev.txt",
     "remoteUser": "vscode"
 }

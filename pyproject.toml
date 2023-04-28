@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+addopts = "-ra --cov api --cov-report term --cov-report xml:cov.xml"
+testpaths = ["tests"]
+pythonpath = ['.']

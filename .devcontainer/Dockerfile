@@ -1,5 +1,5 @@
-ARG IMAGE=bullseye
-FROM --platform=amd64 mcr.microsoft.com/devcontainers/${IMAGE}
+ARG VARIANT=bullseye
+FROM --platform=amd64 mcr.microsoft.com/devcontainers/python:${VARIANT}
 RUN export DEBIAN_FRONTEND=noninteractive \
      && apt-get update && apt-get install -y xdg-utils \
      && apt-get clean -y && rm -rf /var/lib/apt/lists/*
