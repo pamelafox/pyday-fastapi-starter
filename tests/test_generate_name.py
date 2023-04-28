@@ -24,3 +24,10 @@ def test_generate_name_starts_with():
         response = client.get("/generate_name?starts_with=M")
         assert response.status_code == 200
         assert response.json() == {"name": "Minnie"}
+
+def test_generate_name_no_names_found():
+    with TestClient(app) as client:
+        random.seed(123)
+        response = client.get("/generate_name?starts_with=Z")
+        assert response.status_code == 404
+        assert response.json() == {"detail": "No matching names"}

@@ -3,3 +3,4 @@ fastapi[all]
 pytest
 pytest-cov
 coverage
+schemathesis
