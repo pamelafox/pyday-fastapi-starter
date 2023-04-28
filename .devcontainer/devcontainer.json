@@ -9,6 +9,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
+                "ms-vscode.vscode-node-azure-pack",
                 "ms-azuretools.vscode-bicep",
                 "ms-python.python",
                 "ms-python.black-formatter",
