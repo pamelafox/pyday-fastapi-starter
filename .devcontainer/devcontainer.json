@@ -11,27 +11,30 @@
             "extensions": [
                 "ms-azuretools.vscode-bicep",
                 "ms-python.python",
+                "ms-python.black-formatter",
                 "ryanluker.vscode-coverage-gutters"
             ],
-            "python.defaultInterpreterPath": "/usr/local/bin/python",
-            "python.linting.enabled": true,
-            "python.testing.unittestEnabled": false,
-            "python.testing.pytestEnabled": true,
-            "python.testing.pytestArgs": [
-                "tests"
-            ],
-            "[python]": {
-                "editor.formatOnSave": true,
-                "editor.codeActionsOnSave": {
-                    "source.fixAll": true
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python",
+                "python.linting.enabled": true,
+                "python.testing.unittestEnabled": false,
+                "python.testing.pytestEnabled": true,
+                "python.testing.pytestArgs": [
+                    "tests"
+                ],
+                "[python]": {
+                    "editor.formatOnSave": true,
+                    "editor.codeActionsOnSave": {
+                        "source.fixAll": true
+                    },
+                    "editor.defaultFormatter": "ms-python.black-formatter"
                 },
-                "editor.defaultFormatter": "ms-python.black-formatter"
-            },
-            "python.formatting.provider": "black",
-            "files.exclude": {
-                "**/*.coverage": true,
-                ".ruff_cache": true,
-                ".pytest_cache": true
+                "python.formatting.provider": "black",
+                "files.exclude": {
+                    "**/*.coverage": true,
+                    ".ruff_cache": true,
+                    ".pytest_cache": true
+                }
             }
         }
     },
