@@ -1,16 +1,10 @@
 {
-    "name": "Azure Developer CLI",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "VARIANT": "3.11-bullseye"
-        }
-    },
+    "name": "Simple FastAPI Playground",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+    "forwardPorts": [8000],
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-vscode.vscode-node-azure-pack",
-                "ms-azuretools.vscode-bicep",
                 "ms-python.python",
                 "ms-python.black-formatter"
             ],
@@ -20,7 +14,7 @@
                 "[python]": {
                     "editor.formatOnSave": true,
                     "editor.codeActionsOnSave": {
-                        "source.fixAll": true
+                        "source.fixAll": "explicit"
                     },
                     "editor.defaultFormatter": "ms-python.black-formatter"
                 },
@@ -33,10 +27,6 @@
             }
         }
     },
-    "forwardPorts": [
-        8000,
-        7071
-    ],
     "postCreateCommand": "pip3 install --user -r requirements.txt",
     "remoteUser": "vscode"
 }
